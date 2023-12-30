@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lifespan : {
+    lifespan: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -9,7 +9,7 @@ const {Dog} = require("../db.js")
                 axios.get(`https://api.thedogapi.com/v1/breeds/search?q=${name}`).then(
                    ({ data }) => {
                     const personajesFiltrados = data.map(element => ({
-                      id: element.id,
+                      id: parseInt(id, 10),
                       name: element.name,
                       lifespan: element.lifespan,
                       weight: element.weight,

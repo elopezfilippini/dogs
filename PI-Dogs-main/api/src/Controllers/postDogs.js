@@ -1,20 +1,35 @@
 const {Dog} = require("../db.js")
+const {Temperament} = require("../db.js")
+
 
 
 const postDog = async (req,res)=>  {
 try {
-const {id,name,lifespan,weight,height,reference_image_id} =req.body
-if (!id ||!name||!lifespan||!weight||!height||!reference_image_id) res.status(400).send("Faltan ingresar datos")
+const {id,name,life_span,weight,height,temperament,reference_image_id} =req.body
+if (!id ||!name||!life_span||!weight||!height||!reference_image_id) res.status(400).send("Faltan ingresar datos")
 else { 
     const newDog = await Dog.create({
     id: id,
     name: name,
-    lifespan:lifespan,
+    lifespan:life_span,
     weight:weight,
     height:height,
     reference_image_id:reference_image_id
-}); return res.status(200).json(newDog)
+}); 
+const temperamento = temperament.split(",")
+    const temperamentIds = await Temperament.findAll({
+       where: {
+          name: temperamento
+       },
+       attributes: ['id'] //devuelve un objeto cuyo atributo trae desde la columna ID que esta en la tabla temperament al encontrar cada uno de los nombres de los temperamentos
+       //que tiene el perro
+    });
 
+    const ids = temperamentIds.map(temp => temp.id); //transforma dicho objeto en un array, cada elemento del objeto temperamentIds extrae el id
+
+    await newDog.addTemperament(ids); //toma el registro de newdog (su id) y lo agrega al id  de temperamento en la tabla through 
+ 
+res.json(newDog)
 }
 }
 catch(error) { res.status(500).send(error.message)}
