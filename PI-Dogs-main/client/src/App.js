@@ -9,21 +9,22 @@ import { useState } from 'react';
 import Cards from "./Cards/cards.js";
 import SearchBar from "./SearchBar/SearchBar.js";
 import { useLocation } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
+import {AddDog} from "./Redux/Actions.js"
 
 
 function App(prop) {
+  const dispatch = useDispatch()
   const InitialState = []
   const [dogs,setDogs] = useState(()=>InitialState)
   const currentPage = useLocation()
   
   function onSearch(id) {
-  axios.get(`http://localhost:3001/getDogs/${id}`)
-  .then(({data}) =>{ if (data.id) return setDogs((dogviejos) => [...dogviejos, data])}).catch((error) => window.alert(error))}
-  
+    console.log(id)
+  dispatch(AddDog(id))
+  }  
 function onClose(id){
-const nuevoPerros = dogs.filter((perro)=> perro.id !==Number(id))
-setDogs(nuevoPerros)
+console.log(id)
 }
 
 
