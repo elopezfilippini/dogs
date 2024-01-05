@@ -1,15 +1,23 @@
-.App {
-  text-align: center;
-}
+  .App {
+    /* display: flex;
+  align-items: flex-start;
+  justify-content: center; */
+  height: 100vh;
+  min-width:100h;
+  width:100%;
+  margin: 0;
+  }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  animation: App-logo-spin infinite 50s linear;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 50s linear;
   }
 }
 
@@ -35,4 +43,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.titulo {
+  text-align: center;
+  font-size: 46px; /* Corregido de 'size' a 'font-size' */
+  color: rgb(224, 89, 12);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin-bottom: 0%;
+
+  
+}
+
+body {
+  display: flex;
+  align-items: flex-start; /* Alinea al principio (arriba) del eje transversal */
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+.separator{
+  margin-top: 0px;
+
+  width: 30%;
 }

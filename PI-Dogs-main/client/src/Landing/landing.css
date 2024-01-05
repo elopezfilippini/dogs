@@ -1,0 +1,39 @@
+.bloque {
+    text-align: left;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+.texto {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+  color: #FFF;
+  margin-top: 30px;
+  padding: 20px;
+  position: absolute;
+  left:350px;
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  white-space: nowrap; 
+
+}
+
+.boton-hueso {
+    padding: 10px 20px;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #FF3366;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    position:absolute;
+    top: 300px;
+    left:200px
+}

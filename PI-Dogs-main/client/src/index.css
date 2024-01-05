@@ -5,6 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width : 100%;
+  background-image: url("https://i.ibb.co/dfWycVt/Photo-Real-thousands-of-dogs-from-different-races-playing-with-7-2.jpg");
+  background-size: cover;
+  
+  margin-left: 000px;
+  display:flex;
+  place-items: left;
+  background-repeat: no-repeat; 
+  background-color: black;
+  align-items: flex-start; 
+
+   min-height: 100vh;
+   min-width: 100vh
+}
+#root{
+  width : 100%;
+  margin-left: 40px;
+  display:flex;
+  place-items: left;
+
+ 
+  align-items: flex-start; 
+
+   min-height: 100vh;
+   min-width: 100vh
 }
 
 code {
