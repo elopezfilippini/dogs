@@ -1,8 +1,27 @@
 .ampa {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
- 
-    
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .paginacion {
 
-}
+  width: auto;
+  height: auto;
+
+    margin-bottom: 10px; /* Ajusta el margen según tus necesidades */
+  }
+  
+  .button {
+    width: 100px; /* Ajusta el ancho según tus necesidades */
+    height: 40px; /* Ajusta la altura según tus necesidades */
+    margin: 0; /* Elimina cualquier margen predefinido */  }
+    
+    
+.cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+

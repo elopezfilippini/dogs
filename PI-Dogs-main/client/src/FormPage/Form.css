@@ -1,0 +1,41 @@
+.ContainerForm {
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 3px;
+  }
+  
+  input,
+  button {
+    margin-bottom: 0px;
+    padding: 0px;
+    font-size: 1em;
+  }
+  
+  .separator {
+    margin: 0px 0;
+    border: 0;
+    border-top: 1px solid #122da1;
+  }
+  
+  .submitBtn,
+  .registerBtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submitBtn:hover,
+  .registerBtn:hover {
+    background-color: #45a049;
+  }

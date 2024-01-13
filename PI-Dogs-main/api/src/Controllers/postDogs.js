@@ -6,16 +6,20 @@ const {Temperament} = require("../db.js")
 const postDog = async (req,res)=>  {
 try {
 const {id,name,life_span,weight,height,temperament,reference_image_id} =req.body
-if (!id ||!name||!life_span||!weight||!height||!reference_image_id) res.status(400).send("Faltan ingresar datos")
-else { 
+// if (!name||!life_span||!weight||!height||!reference_image_id) res.status(400).send("Faltan datos")
+// else { 
     const newDog = await Dog.create({
-    id: id,
+    
     name: name,
     lifespan:life_span,
     weight:weight,
     height:height,
-    reference_image_id:reference_image_id
-}); 
+    reference_image_id:reference_image_id,
+    Origin: "DB"
+    
+
+}
+); 
 const temperamento = temperament.split(",")
     const temperamentIds = await Temperament.findAll({
        where: {
@@ -31,7 +35,7 @@ const temperamento = temperament.split(",")
  
 res.json(newDog)
 }
-}
+
 catch(error) { res.status(500).send(error.message)}
 }
 

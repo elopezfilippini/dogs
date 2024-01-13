@@ -1,7 +1,7 @@
 .card {
     display: block;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: rgb(223, 67, 0); 
     text-align: center;   
     display: flex;
@@ -24,7 +24,7 @@ transition: transform 0.5s ease-in-out;
 
 .dogimage{
 
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     justify-content: center; /* Centrar verticalmente */
     align-items: center; /* Centrar horizontalmente */

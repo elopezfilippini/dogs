@@ -4,11 +4,12 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Dog', { id:{type: DataTypes.INTEGER,
-     primaryKey:true},
+     primaryKey:true,autoIncrement:true },
   
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      
     },
     lifespan: {
       type: DataTypes.STRING,
@@ -18,7 +19,7 @@ module.exports = (sequelize) => {
       type: DataTypes.JSON,
       allowNull: false,
     },
-    height : {
+    height: {
       type: DataTypes.JSON,
 
       allowNull: false, 
@@ -26,7 +27,12 @@ module.exports = (sequelize) => {
     reference_image_id: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    Origin: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
   });
 };
 
