@@ -2,10 +2,10 @@ import "./card.css"
 import { Link } from 'react-router-dom';
 function card (props){
     
-    return (<div class="card">  <Link to={`/detail/${props.id}`} >
+    return (<div class="card">  <Link to={`/detail/${props.name}`} >
     <h1 className="card-name" style={{fontSize:"28px", maxWidth: "100%",color:"yellow"}}> 
     🐶{props.name}🐶</h1>
-    <img className="dogimage" src={`https://cdn2.thedogapi.com/images/${props.image}.jpg`}/> 
+    <img className="dogimage" src={`${props.image}`}/> 
 <h3 className="card-id" style={{fontSize:"24px",color:"whitesmoke"}}> ID:{props.id}</h3>
 <h3 className="card-id" style={{fontSize:"10px",color:"whitesmoke"}}> Peso: {props.weight.metric} kg</h3>
 <h3 className="card-id" style={{fontSize:"10px",color:"whitesmoke"}}> Altura: {props.height.metric} cm</h3>

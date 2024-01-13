@@ -11,7 +11,7 @@ module.exports = (sequelize) => {
       allowNull: false,
       
     },
-    lifespan: {
+    life_span: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -29,6 +29,10 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     Origin: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    temperament: {
       type: DataTypes.STRING,
       allowNull: false
     },

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import "./Form.css";
 import { useSelector } from "react-redux";
+import { NewDog } from '../Redux/Actions';
 
 export default function Form(props){
 
@@ -21,40 +22,42 @@ const [error,setErrors] = useState({})
 const [tempError,setTempErrors] = useState({})
 const [enviar,setEnviar] = useState(true)
 const [addtemperamento,setTemperamento] = useState(true)
-
+var resultadoConcatenado = ""
 const agregarPalabra = () => {
-    if (nuevaPalabra.trim() !== '') {
-      setListaPalabras([...listaPalabras, nuevaPalabra]);
-      setNuevaPalabra('');
-  setTemperamento(true)
-  concatenarPalabras()
+  if (nuevaPalabra.trim() !== '') {
+    setListaPalabras(prevList => [...prevList, nuevaPalabra]);
+    setNuevaPalabra('');
+  }
+};
 
-    }
+const concatenarPalabras = () => {
+   resultadoConcatenado = listaPalabras.join(', ');
+    
+   
+    SetNewDog({...newDog,temperament:resultadoConcatenado});
   };
-  const concatenarPalabras = () => {
-    const resultadoConcatenado = listaPalabras.join(', ');
-    setResultado(resultadoConcatenado);
-  };
+  useEffect(() => {
+    concatenarPalabras();
+  }, [listaPalabras]);
+
 function HandleOnChange (e){
     const nombre = e.target.name;
         const valor = e.target.value;
  SetNewDog({...newDog,[nombre]: e.target.value});
-
  setErrors(validate({...newDog,[nombre]: e.target.value},AllTemps))
- 
-   
+  
 }
+
 const NewWord = function(e){
  
-
   setTempErrors(validateTemp({...newDog,temperament: e.target.value},AllTemps))
   setNuevaPalabra(e.target.value.charAt(0).toUpperCase()+e.target.value.slice(1).toLowerCase())
- 
- 
 e.target.value=""
 }
+
 const handleSubmit = event => {
     event.preventDefault();
+
     console.log("Objeto de newDog:", JSON.stringify(newDog, null, 2));
     props.postNewDog(newDog);
   }
@@ -66,9 +69,11 @@ const handleSubmit = event => {
   useEffect(() => {
     if (!Object.keys(error).length) {
       setEnviar(false)} else setEnviar(true)})
+
      useEffect(() => {
-      console.log(error)
-         });
+      SetNewDog({...newDog,temperament:resultadoConcatenado});
+console.log(NewDog)
+         },[]);
 
 return (<div class='ContainerForm'>
 <form class="form" onSubmit={handleSubmit}

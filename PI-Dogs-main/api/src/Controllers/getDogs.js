@@ -29,7 +29,7 @@ const getDogbyID = async function (req, res) {
         height: element.height,
         temperament: element.temperament,
         temperamentlist: element.temperament ? element.temperament.split(",") : [],
-        reference_image_id: element.reference_image_id,
+        reference_image_id: `https://cdn2.thedogapi.com/images/`+element.reference_image_id+`.jpg`,
         Origin: "Api"
       }));
 

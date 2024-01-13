@@ -37,11 +37,12 @@ function postNewDog(newdog){
     
     name: newdog.name,
     life_span:newdog.spanLife,
-    weight:{metric:newdog.weightMin + "- "+newdog.maxWeight},
-    height:{metric:newdog.minHeight + "- " + newdog.maxHeight },
+    weight:{metric:newdog.weightMin + " - "+ newdog.weightMax},
+    height:{metric:newdog.minHeight + " - " + newdog.maxHeight },
     reference_image_id:newdog.reference_image_id,
-    temperament:newdog.temperaments}
-console.log(postDog)
+    temperament:newdog.temperament}
+console.log("EL PERRO QUE ENTREGA APP ES...")
+    console.log(postDog)
     axios.post(`http://localhost:3001/postDog`, postDog,{ withCredentials: true })
     .then(({data}) =>{ console.log(data)
    
@@ -68,11 +69,11 @@ console.log(postDog)
       <h1></h1>
       <Routes>
       <Route path ={"/about"} element = {<About/>}> </Route >
-      <Route path ={"/detail"} element = {<Detail/>}></Route>
+      
       <Route path ={"/home"} element = {<Cards dogs={dogs} />}></Route>
       <Route path = {"/"} element={<Landing/>}></Route>
       <Route path = {"/newDog"} element={<Form  postNewDog={postNewDog}/>}></Route>
-      <Route path={"/detail/:id"} element={<Detail />}></Route>
+      <Route path={"/detail/:name"} element={<Detail />}></Route>
       </Routes>
     </div>
     

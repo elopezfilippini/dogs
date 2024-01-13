@@ -11,10 +11,11 @@ const {id,name,life_span,weight,height,temperament,reference_image_id} =req.body
     const newDog = await Dog.create({
     
     name: name,
-    lifespan:life_span,
+    life_span:life_span,
     weight:weight,
     height:height,
     reference_image_id:reference_image_id,
+    temperament:temperament,
     Origin: "DB"
     
 
