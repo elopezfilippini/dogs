@@ -1,6 +1,7 @@
 const axios = require("axios");
 const express = require('express');
 const { Dog } = require("../db.js");
+const API_KEY = process.env.API_KEY;
 
 const getDogbyID = async function (req, res) {
   try {
@@ -19,7 +20,7 @@ const getDogbyID = async function (req, res) {
       };
       return res.status(200).json(personaje);
     } else {
-      const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds/`);
+      const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds/?api_key=${API_KEY}`);
       let personajesFiltrados = data.map(element => ({
         id: parseInt(element.id, 10),
         name: element.name,
