@@ -8,7 +8,7 @@ body {
   width : 100%;
   background-image: url("https://i.ibb.co/dfWycVt/Photo-Real-thousands-of-dogs-from-different-races-playing-with-7-2.jpg");
   background-size: cover;
-  
+  background-attachment: fixed;
   margin-left: 000px;
   display:flex;
   place-items: left;

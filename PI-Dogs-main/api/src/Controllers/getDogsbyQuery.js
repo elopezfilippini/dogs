@@ -15,8 +15,10 @@ const getDogbyQuery = async function (req, res) {
       lifespan: element.lifespan,
       weight: element.weight,
       height: element.height,
-      reference_image_id: element.reference_image_id,
-      Origin:"Api"
+      reference_image_id:  `https://cdn2.thedogapi.com/images/`+element.reference_image_id+`.jpg`,
+      Origin:"Api",
+      life_span:element.life_span,
+      temperament:element.temperament
     }));
 
 

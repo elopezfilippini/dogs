@@ -1,9 +1,14 @@
 .bloque {
     text-align: left;
-    width: 100%;
+    width: 20%;
     min-height: 100vh;
-    min-width: 100vh;
+    min-width: 70vh;
 }
+.bloqueContainer {
+display:inline-flex;
+justify-content: space-around;
+}
+
 
 .texto {
   font-size: 48px;
@@ -19,6 +24,18 @@
   font-family: 'Comic Sans MS', cursive, sans-serif;
   white-space: nowrap; 
 
+}
+.imagenperro {
+width: 500px;
+ 
+  display: block; 
+  
+}
+.contenedorImagen {
+  width:300px;
+  margin-top: 33%;
+  display: block; 
+  
 }
 
 .boton-hueso {
@@ -36,4 +53,9 @@
     position:absolute;
     top: 300px;
     left:200px
+}
+
+.boton-hueso:hover {
+  color: yellow;
+
 }
