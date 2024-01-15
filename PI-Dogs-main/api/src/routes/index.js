@@ -14,12 +14,12 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 // router.use("/getDogs/:id",getDogs)
-router.use("/getAllDogs/",getDogs)
-router.use("/getDogs",getDogsbyQuery)
-router.use("/postDog",postDog)
+router.use("/getAllDogs/",getDogs) // trae todos los perros, tanto de la Api como del server
+router.use("/getDogs",getDogsbyQuery) //trae los perros segun busqueda en el query
+router.use("/postDog",postDog) //postea un perro
 router.use("/temperament",getTemperament)
 router.use("/getTemps",getTemp)
-router.use("/getDogsbyID/:id",getDogsbyID)
+router.use("/getDogsbyID/:id",getDogsbyID)//trae los perros segun params ID
 
 // router.post('/postDog', postDog
 //   );

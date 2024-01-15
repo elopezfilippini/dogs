@@ -49,10 +49,10 @@ console.log("EL PERRO QUE ENTREGA APP ES...")
 })}
 
 
-// useEffect(() => {
+useEffect(() => {
   dispatch(AddAllDogs())
   dispatch(getTemps());
-// }, [])
+})
 
 
 

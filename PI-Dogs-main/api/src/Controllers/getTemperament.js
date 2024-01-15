@@ -22,7 +22,7 @@ const getTemperament = async function (req, res) {
     );
 
     const createTemperamentPromises = listaTemperamentos.map((nombre) =>
-      Temperament.create({ name: nombre.replace(/^['"](.*)['"]$/g, '$1') })
+      Temperament.create({ name: nombre.replace(/^['"](.*)['"]$/g, '$1') }) // Eliminacion de comillas.
     );
 
     await Promise.all(createTemperamentPromises);

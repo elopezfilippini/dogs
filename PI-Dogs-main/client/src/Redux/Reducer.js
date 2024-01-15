@@ -14,10 +14,12 @@ console.log('Acción:', action); switch(action.type){
     }}
     case ORDER:{
         const ordercopy = [...state.dogs]; 
-
-        if(action.payload==="A" ) ordercopy.sort((a,b)=> a.id-b.id)
-        if(action.payload==="D" ) ordercopy.sort((a,b)=> b.id-a.id) 
-      
+        if (action.payload === "A") {
+            ordercopy.sort((a, b) => a.name.localeCompare(b.name));
+        }
+        if (action.payload === "D") {
+            ordercopy.sort((a, b) => b.name.localeCompare(a.name));
+        }
         return {...state,dogs:ordercopy} }
     case ORDERW:{
             const ordercopy = [...state.dogs]; 

@@ -13,7 +13,6 @@ function Cards(props) {
 
   const dispatch = useDispatch()
   const perros = useSelector((state) => state.dogs);
-  const temps = useSelector((state) => state.temps);
   const maxShow = 8
   const [initialFrame,setFrame] = useState(0)
   const [adeshabilitado,setdeshabilitado] = useState(true)
@@ -24,16 +23,9 @@ setFrame(0)
   }, [perros]);
  
   
-  const lastFrame = initialFrame + maxShow
+  const lastFrame = Math.min(initialFrame + maxShow, perros.length);
   const dogShow = perros.slice(initialFrame,lastFrame) 
-  useEffect(() => {
-    setFrame(0)    
-      }, [perros]);
-
-      useEffect(() => {
-        setFrame(0)    
-          }, [perros]);
-    
+ 
   function avPag(){
     setFrame(initialFrame+8)
     setdeshabilitado(false)
@@ -44,6 +36,7 @@ setFrame(0)
   };
   const handleOrder = (event) => {
     dispatch(OrderDog(event.target.value));
+    setFrame(0)
   };
   const handleOrderW = (event) => {
     dispatch(OrderDogW(event.target.value));
@@ -114,7 +107,7 @@ setFrame(0)
                <div className="cards-container">
         {dogShow.map((perro) => (
           <Card
-          key={perro.id}
+          key={`${perro.id}-${perro.name}`}
             id={perro.id}
             name={perro.name}
             height={perro.height}

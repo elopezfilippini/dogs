@@ -15,13 +15,13 @@ const {id,name,life_span,weight,height,temperament,reference_image_id} =req.body
     weight:weight,
     height:height,
     reference_image_id:reference_image_id,
-    temperament:temperament,
+   
     Origin: "DB"
     
 
 }
 ); 
-const temperamento = temperament.split(",")
+const temperamento = temperament.split(", ")
     const temperamentIds = await Temperament.findAll({
        where: {
           name: temperamento
@@ -34,7 +34,7 @@ const temperamento = temperament.split(",")
 
     await newDog.addTemperament(ids); //toma el registro de newdog (su id) y lo agrega al id  de temperamento en la tabla through 
  
-res.json(newDog)
+res.json(temperamentIds)
 }
 
 catch(error) { res.status(500).send(error.message)}

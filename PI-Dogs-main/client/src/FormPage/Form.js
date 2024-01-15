@@ -8,6 +8,7 @@ import "./Form.css";
 import { useSelector } from "react-redux";
 import { NewDog } from '../Redux/Actions';
 
+
 export default function Form(props){
 
 
@@ -60,6 +61,8 @@ const handleSubmit = event => {
 
     console.log("Objeto de newDog:", JSON.stringify(newDog, null, 2));
     props.postNewDog(newDog);
+    window.alert("Perro creado!")
+navigate("/home")
   }
 
   useEffect(() => {

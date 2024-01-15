@@ -1,13 +1,15 @@
 const axios = require("axios");
 const express = require('express');
 const { Dog } = require("../db.js");
+const { Temperament } = require("../db.js");
+const Sequelize = require('sequelize');
 
 const getDogbyQuery = async function (req, res) {
   const name = req.query.name;
 
   try {
     const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds/search?q=${name}`);
-    const personajesFiltrados = data.map(element => ({
+    const perrosFiltrados = data.map(element => ({
       id: parseInt(element.id, 10),
       name: element.name,
       lifespan: element.lifespan,
@@ -18,10 +20,32 @@ const getDogbyQuery = async function (req, res) {
     }));
 
 
-    
-    const dogsCreated = await Dog.findAll({ where: { name: name } });
-   const PersonajesEncontrados = [...personajesFiltrados,...dogsCreated]
-   res.status(200).json(PersonajesEncontrados);   
+    const dogsCreated = await Dog.findAll({
+      where: {
+        name: {
+          [Sequelize.Op.iLike]: `%${name}%`
+        }
+      },
+      include: [{ model: Temperament, attributes: ['name']}]
+    });
+  
+    const dogsWithTemperaments = dogsCreated.map(dog => {
+      const temperamentsNames = dog.Temperaments.map(temp => temp.name);
+      return {
+        id: dog.id,
+        name: dog.name,
+        life_span: dog.life_span,
+        reference_image_id: dog.reference_image_id,
+        weight:dog.weight,
+        height:dog.height,
+        temperament: temperamentsNames.join(', '),
+        Origin:dog.Origin
+      };
+    });
+  
+    const todolosPerros = [...perrosFiltrados, ...dogsWithTemperaments];
+
+    res.status(200).json(todolosPerros);
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');

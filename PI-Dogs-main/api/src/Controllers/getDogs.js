@@ -2,26 +2,14 @@ const axios = require("axios");
 const express = require('express');
 const { Dog } = require("../db.js");
 const API_KEY = process.env.API_KEY;
+const { Temperament } = require("../db.js");
+const Sequelize = require('sequelize');
 
 const getDogbyID = async function (req, res) {
   try {
-    const { id } = req.params;
-
-    if (id) {
-      const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`);
-      const personaje = {
-        id: data.id,
-        name: data.name,
-        life_span: data.life_span,
-        weight: data.weight,
-        height: data.height,
-        reference_image_id: data.reference_image_id,
-        Origin: "Api"
-      };
-      return res.status(200).json(personaje);
-    } else {
+    
       const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds/?api_key=${API_KEY}`);
-      let personajesFiltrados = data.map(element => ({
+      let perrosFiltrados = data.map(element => ({
         id: parseInt(element.id, 10),
         name: element.name,
         life_span: element.life_span,
@@ -34,17 +22,29 @@ const getDogbyID = async function (req, res) {
         Origin: "Api"
       }));
 
-      // Assuming Dog is a Sequelize model, you can fetch dogs from the database like this:
-      const dogsCreated = await Dog.findAll();
-    ;
-    const todolosPerros = [...personajesFiltrados, ...dogsCreated];
+      const dogsCreated = await Dog.findAll({
+        include: [{ model: Temperament, attributes: ['name']}]
+      });
+    
+      const dogsWithTemperaments = dogsCreated.map(dog => {
+        const temperamentsNames = dog.Temperaments.map(temp => temp.name);
+        return {
+          id: dog.id,
+          name: dog.name,
+          life_span: dog.life_span,
+          reference_image_id: dog.reference_image_id,
+          weight:dog.weight,
+          height:dog.height,
+          temperament: temperamentsNames.join(', '),
+          Origin:dog.Origin
+        };
+      });
+      const todolosPerros = [...perrosFiltrados, ...dogsWithTemperaments];
 
-      return res.status(200).json(todolosPerros);
+      res.status(200).json(todolosPerros);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
     }
-  } catch (error) {
-    console.error(error);
-    return res.status(500).send('Internal Server Error');
   }
-};
-
 module.exports = getDogbyID;
