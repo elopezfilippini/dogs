@@ -3,6 +3,16 @@
     margin: 0 auto;
     padding: 20px;
   }
+  .ContainerAll {
+    max-width: 5000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: url("https://i.ibb.co/QJ2rr34/Default-handmade-deficient-draw-of-dogs-annotations-and-script-0-acced694-b0f0-4033-bb9d-15925d8fd32.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain/* Ajusta el tamaño del fondo para cubrir completamente el contenedor sin distorsionarse */
+  }
+  
   
   .form {
     display: flex;

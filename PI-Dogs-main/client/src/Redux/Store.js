@@ -1,5 +1,5 @@
 import {applyMiddleware, createStore,compose } from "redux";
-import { dogsReducer } from "./Reducer";
+import  {dogsReducer}  from "./Reducer";
 import logger from 'redux-logger'; // Asegúrate de instalar redux-logger
 
 import  thunkMiddleware  from "redux-thunk";

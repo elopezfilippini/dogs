@@ -1,4 +1,4 @@
-import './App.css';
+  import './App.css';
 import {Route,Routes} from "react-router-dom"
 import { useEffect } from 'react';
 import Landing from "./Landing/landing.js";
@@ -49,10 +49,10 @@ console.log("EL PERRO QUE ENTREGA APP ES...")
 })}
 
 
-useEffect(() => {
-  dispatch(AddAllDogs())
-  dispatch(getTemps());
-})
+// useEffect(() => {
+//   dispatch(AddAllDogs())
+//   dispatch(getTemps());
+// })
 
 
 

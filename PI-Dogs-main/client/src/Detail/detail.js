@@ -4,6 +4,7 @@ import { useState,useEffect } from "react"
 import React from "react"
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import "./detail.css"
 
 
 export default function Detail(){
@@ -12,19 +13,27 @@ const [personaje,setCharacter] = useState({})
 const {name} = useParams()
 console.log("EL ID ES " + name)    
 const perito= perros.find((perro)=> perro.name === name)
+console.log("perito es...")
 console.log(perito)
 useEffect(() => {
-    setCharacter(perros.find((perro)=> perro.name === name))
- }, [name]);
+    if (perito) {
+      setCharacter(perito);
+    }
+  }, [perito, name]);
+ console.log("personaje  es...")
  console.log(personaje)
  return (
-    <div className="Tarjeta" style={{background: 'rgba(235, 235, 0, 0.8)    ', borderRadius:"30%", fontSize: "30px"}}> 
+    <div className="tarjetadetail"> 
+    
 <br></br>
-
-<h3 style={{fontFamily: 'Verdana', color:"Blue", marginBottom:"0.001px"}}>Detalle</h3>
- <h3 style={{fontFamily: 'Verdana', color:"magenta",marginBottom:"0.01px"}}>Nombre : {personaje.name}</h3>
- <h3 style={{fontFamily: 'Verdana', color:"magenta",marginBottom:"0.01px"}}>Temperamento : {personaje.temperament}</h3>
- <img className="dogimage" src={`${personaje.reference_image_id
+<img class="otherimages" src={"   https://i.ibb.co/CtVpBdB/pngegg.png"
+}></img>
+ <h3 class="datos" style={{fontFamily: 'Verdana', marginTop: "-5%" ,color:"RED",fontSize:"288%",marginBottom:"0.01px"}}> {personaje.name}</h3>
+ <h3 class="datos" style={{fontFamily: 'Verdana', color:"brown",marginBottom:"0.01px"}}>Peso (kgs) : {personaje.weight?.metric}</h3>
+ <h3 class="datos" style={{fontFamily: 'Verdana', color:"brown",marginBottom:"0.01px"}}>Altura (cm) : {personaje.height?.metric}</h3>
+ <h3 class="datos" style={{fontFamily: 'Verdana', color:"brown",marginBottom:"0.01px"}}>Expectativa de vida : {personaje.life_span}</h3>
+ <h3 class="datos" style={{fontFamily: 'Verdana', color:"brown",marginBottom:"0.01px"}}>Temperamentos : {personaje.temperament}</h3>
+ <img class="dogimages" src={`${personaje.reference_image_id
 }`}></img> 
  <br></br>
  

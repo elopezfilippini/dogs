@@ -78,23 +78,23 @@ navigate("/home")
 console.log(NewDog)
          },[]);
 
-return (<div class='ContainerForm'>
+return (<div class='ContainerAll' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}><h1 style={{}}>     Creador de Perros 🔬:</h1><div class='ContainerForm'>
 <form class="form" onSubmit={handleSubmit}
 >
-<label style={{color:"White",fontSize:"1em"}}>Nombre Raza : </label> <input style={{fontSize:"1em"}} name="name" onChange={HandleOnChange}></input>
+<label style={{ color: "black", fontSize: "1.5em", WebkitTextStroke: "0.12px white",fontWeight:"bold" }}>Nombre Raza : </label> <input style={{fontSize:"1em", borderColor:"grey"}} name="name" onChange={HandleOnChange}></input>
 <h1 style={{color:"red",fontSize:"1em"}}> {error.name}</h1>
-<label style={{color:"White",fontSize:"1em"}} >    Altura Máxima: </label> <input name="maxHeight"  onChange={HandleOnChange}></input>
+<label style={{ color: "black", fontSize: "1.5em", WebkitTextStroke: "0.12px white",fontWeight:"bold" }}>    Altura Máxima: </label> <input style={{fontSize:"1em", borderColor:"grey"}} name="maxHeight"  onChange={HandleOnChange}></input>
 <h1 style={{color:"red",fontSize:"1em"}}> {error.maxHeight}</h1>
-<label style={{color:"White",fontSize:"1em"}} >    Altura Mínimo: </label> <input name="minHeight"  onChange={HandleOnChange}></input>
+<label style={{ color: "black", fontSize: "1.5em", WebkitTextStroke: "0.12px white",fontWeight:"bold" }}>   Altura Mínimo: </label> <input style={{fontSize:"1em", borderColor:"grey"}} name="minHeight"  onChange={HandleOnChange}></input>
 <h1 style={{color:"red",fontSize:"1em"}}> {error.minHeight}</h1>
-<label style={{color:"White",fontSize:"1em"}} >    Peso Máximo: </label> <input name="weightMax"  onChange={HandleOnChange}></input>
+<label style={{ color: "black", fontSize: "1.5em", WebkitTextStroke: "0.12px white",fontWeight:"bold" }}>  Peso Máximo: </label> <input style={{fontSize:"1em", borderColor:"grey"}} name="weightMax"  onChange={HandleOnChange}></input>
 <h1 style={{color:"red",fontSize:"1em"}}> {error.weightMax}</h1>
-<label style={{color:"White",fontSize:"1em"}} >    Peso Minimo: </label> <input name="weightMin"  onChange={HandleOnChange}></input>
+<label style={{ color: "black", fontSize: "1.5em", WebkitTextStroke: "0.12px white",fontWeight:"bold" }}>   Peso Minimo: </label> <input style={{fontSize:"1em", borderColor:"grey"}} name="weightMin"  onChange={HandleOnChange}></input>
 <h1 style={{color:"red",fontSize:"1em"}}> {error.weightMin}</h1>
-<label style={{color:"White",fontSize:"1em"}} >    url Imagen: </label> <input name="reference_image_id"  onChange={HandleOnChange}></input>
-<label style={{color:"White",fontSize:"1em"}} >    Años de vida: </label> <input name="spanLife"  onChange={HandleOnChange}></input>
+<label style={{ color: "black", fontSize: "1.5em", WebkitTextStroke: "0.12px white",fontWeight:"bold" }}>  url Imagen: </label> <input style={{fontSize:"1em", borderColor:"grey"}} name="reference_image_id"  onChange={HandleOnChange}></input>
+<label style={{ color: "black", fontSize: "1.5em", WebkitTextStroke: "0.12px white",fontWeight:"bold" }}>   Años de vida: </label> <input style={{fontSize:"1em", borderColor:"grey"}} name="spanLife"  onChange={HandleOnChange}></input>
 <h1 style={{color:"red",fontSize:"1em"}}> {error.spanLife}</h1>
-        <label style={{color:"White",fontSize:"1em"}} >    Temperamentos: </label> 
+<label style={{ color: "black", fontSize: "1.5em", WebkitTextStroke: "0.12px white",fontWeight:"bold" }}>   Temperamentos: </label> 
 <input
           type="text"
           name="temperament"
@@ -106,7 +106,7 @@ return (<div class='ContainerForm'>
         <button disabled={addtemperamento} type="button"onClick={agregarPalabra}>Agregar Temperamento</button>
         <h1 style={{color:"red",fontSize:"1em"}}> {tempError.temperament}</h1>
 <hr style={{margin:"15px"}}></hr>   
-<h3 style={{color:"White",fontSize:"1em"}} > Temperamentos Agregados:</h3>
+<h3 style={{color:"black",fontSize:"1em",margin:"auto"}} > Temperamentos Agregados:</h3>
         <ul style={{color:"White",fontSize:"1em"}}>
           {listaPalabras.map((palabra, index) => (
             <li style={{color:"White",fontSize:"1em"}} key="{index}">{palabra}</li>
@@ -124,7 +124,7 @@ return (<div class='ContainerForm'>
 
 </form>
 
-</div>
+</div></div>
 )
 // {/* <a1 style={{color:"red"}}>{error.email ? error.email: null} </a1>
 // <a1 style={{color:"red"}}>{error.password ? error.password: null} </a1> */}
