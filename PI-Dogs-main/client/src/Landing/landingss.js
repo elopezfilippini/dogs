@@ -16,14 +16,10 @@ function Landing (){
 dispatch(AddAllDogs());
 dispatch(getTemps());
   
-    return (<div class="landing">
-        <div class="contenedorImagen">
-        <img className="huella"src="https://i.ibb.co/RhKRsCx/klipartz-com.png" ></img>
-        <h1 class="titulodepagina">La app de los perros🦴</h1>
-        <h1 class="subtitulo">buscá y crea tus razas favoritas</h1>
-
-        <Link to={'/home'}> <button class="boton-hueso">Guau!!</button></Link>
-        <img className="imagenperro"src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce8b1e76965389.5c7945b0cffef.gif" title ="don´t chase me...wof!"></img></div>
+    return (<div class="bloqueContainer"><div class="bloque">
+        <Link to={'/home'}> <button class="boton-hueso">Guau!!</button></Link><h1 class="texto"> La app de los perros 🦴</h1>
+        </div>
+        <div class="contenedorImagen"><img className="imagenperro"src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce8b1e76965389.5c7945b0cffef.gif" title ="don´t chase me...wof!"></img></div>
     </div>)
 }        
 

@@ -60,7 +60,7 @@ console.log("EL PERRO QUE ENTREGA APP ES...")
 
   return (
     <div className="App">
-    {currentPage.pathname !== "/" ?    <div name="bloque"><h1 class="titulo">🐾búsqueda de razas🐾</h1>
+    {currentPage.pathname !== "/" ?    <div name="bloque"><h1 class="titulo" style={{marginBottom:"1%"}}>🐾búsqueda de razas🐾</h1>
     <Nav onSearch={onSearch} showAll ={showAll}/></div>:null}
   
     
