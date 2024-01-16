@@ -54,11 +54,11 @@ setFrame(0)
 
   return (
       <div className="ampa">
-          <div className="ampa2"style={{ display: "block", justifyContent: "flex-end", width: "480px", margin: "0 auto" }}>
+          <div className="barraFiltros">
     
-    
-            <label htmlFor="" style={{color:"white"}}>Orden Alfabético:</label>
-          <select   style={{margin:"10px"}} name="Ordenado" onChange={handleOrder} >
+          <div className="ordenador">
+            <label class="labelBusqueda" >Orden Alfabético:</label>
+          <select   class="selector" name="Ordenado" onChange={handleOrder} >
             <option name="Orden" value="A">
               Ascendente
             </option>
@@ -67,17 +67,20 @@ setFrame(0)
             </option>
           </select>
         
-          <label htmlFor="" style={{color:"white"}}>Orden por Peso:</label>
-          <select style={{margin:"10px"}}  name="Peso"onChange={handleOrderW}>
+          <label class="labelBusqueda" >Orden por Peso:</label>
+          <select class="selector"  name="Peso"onChange={handleOrderW}>
             <option name="Orden" value="A">
               Ascendente
             </option>
             <option name="order" value="D">
               Descendente
             </option>
-          </select>  <br></br>
-          <label htmlFor="" style={{color:"white"}}>Temperamento:    </label>
-          <select onChange={filtro} name="filter">
+          </select>  </div>
+
+
+          <div className="filtrador">
+          <label class="labelBusqueda" >Temperamento:    </label>
+          <select  class="selector" onChange={filtro} name="filter">
             <option value="All">Temperamento</option>
             <option value="All">All</option>
             <option value="Stubborn">Stubborn</option>
@@ -86,17 +89,18 @@ setFrame(0)
             <option value="Adventurous">Adventurous</option>
             
           </select>
-          <label htmlFor="" style={{color:"white"}}>      Origen:</label>
-          <select  onChange={filterOrigin} name="filter">
+          <label class="labelBusqueda" >      Origen:</label>
+          <select  class="selector" onChange={filterOrigin} name="filter">
             <option value="All">Origen</option>
             <option value="All">All</option>
             <option value="Api">Dog-Api</option>
             <option value="DB">Base Dato</option>
         
-            
-          </select></div>
+           
+          </select> </div>
+            {/**/}
 
-          <br></br>
+            </div>
         <div className="paginacion">
           <button className="button" disabled={adeshabilitado} onClick={rePag}>Back</button>
         <button className="button" disabled={deshabilitado} onClick={avPag}>Next</button></div>

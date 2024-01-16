@@ -103,7 +103,7 @@ return (<div class='ContainerAll' style={{ display: 'flex', flexDirection: 'colu
           title={AllTemps.map(temp => temp.name).join(', ')}
 
         />
-        <button disabled={addtemperamento} type="button"onClick={agregarPalabra}>Agregar Temperamento</button>
+        <button disabled={addtemperamento} style={{marginTop:"10%"}}type="button"onClick={agregarPalabra}>Agregar Temperamento</button>
         <h1 style={{color:"red",fontSize:"1em"}}> {tempError.temperament}</h1>
 <hr style={{margin:"15px"}}></hr>   
 <h3 style={{color:"black",fontSize:"1em",margin:"auto"}} > Temperamentos Agregados:</h3>

@@ -24,4 +24,63 @@
         justify-content: space-evenly;
       }
 
+      .barraFiltros{  width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 0.20%;
+        align-items: center;
+        justify-content:center;
+      margin-bottom: 0.5%;}
+.ordenador{  width: 100%;
+  height: fit-content;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          max-width: 25%;
+          max-width: 200px;
+          background-color: rgba(54, 6, 68, 0.343);
+         border-top-LEFT-radius: 30%;
+         border-bottom-LEFT-radius: 30%;
+          position: relative;
 
+          align-items: center;
+  
+          justify-content: space-evenly;}
+          .filtrador{  width: 100%;
+            height: fit-content;
+            position: relative;
+
+            display: flex;
+            max-width: 25%;
+            max-width: 200px;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(54, 6, 68, 0.343);
+            border-top-RIGHT-radius: 30%;
+            border-bottom-right-radius: 30%;
+            justify-content: space-evenly;}
+
+     
+            .perrobuscadordiv{  display: flex;
+              max-width: 25%;
+              max-width: 25%;
+              flex-wrap: wrap;
+              align-items: center;
+              
+              max-width:25%;
+              max-height: 25%;
+            }
+            .perrobuscador{
+              max-width:70%;
+              max-height: 70%;
+              margin: auto;
+            }
+.selector{
+  max-width: fit-content;
+}
+
+.labelBusqueda {
+  color: white; /* Letra blanca */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente Comic Sans MS */
+}
