@@ -82,5 +82,5 @@ body {
 
 .button:hover {
   transform: scale(1.2);
-  box-shadow: 0 0 20px rgba(243, 243, 40, 0.3);
+  box-shadow: 0 0 2 0px rgba(243, 243, 40, 0.3);
 }

@@ -5,23 +5,44 @@ import React from "react"
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import "./detail.css"
+import { useNavigate } from "react-router-dom";
 
 
 export default function Detail(){
     const perros = useSelector((state) => state.dogs);
+    const navigate = useNavigate()
 const [personaje,setCharacter] = useState({})
 const {name} = useParams()
 console.log("EL ID ES " + name)    
 const perito= perros.find((perro)=> perro.name === name)
-console.log("perito es...")
-console.log(perito)
+
+const [mostrarBoton, setMostrarBoton] = useState("");
+
 useEffect(() => {
     if (perito) {
       setCharacter(perito);
     }
   }, [perito, name]);
- console.log("personaje  es...")
- console.log(personaje)
+
+ useEffect(() => {
+  if (personaje.Origin === "DB") {
+    setMostrarBoton("DB");
+  } else {
+    setMostrarBoton("");
+  }
+}, [personaje]);
+
+const del  = () => {
+  axios.get(`http://localhost:3001/deleteDog/${personaje.id}`)
+.then(({data}) =>{ window.alert("personaje borrado " + data)
+navigate("/")});}
+
+
+
+
+
+
+ 
  return (
     <div className="tarjetadetail"> 
     
@@ -36,6 +57,11 @@ useEffect(() => {
  <img class="dogimages" src={`${personaje.reference_image_id
 }`}></img> 
  <br></br>
+ <br></br>
+ <br></br>
+ {mostrarBoton && <button style ={{color:"red"}} onClick={del}>Eliminar</button>}
+
+ {}
  
 
 

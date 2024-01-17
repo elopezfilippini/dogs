@@ -84,7 +84,3 @@
   color: white; /* Letra blanca */
   font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente Comic Sans MS */
 }
-.contenedorImagen{
-  display: flex;
-  flex-direction: column;
-}

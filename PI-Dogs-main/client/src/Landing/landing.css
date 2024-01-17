@@ -6,13 +6,16 @@
     align-items: center;
     justify-content: center;
 }
+
+
 .bloqueContainer {
-display:inline-flex;
-justify-content: space-around;
-width: 100%;
-height: 100%;
-align-items: center;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
 }
 
 
@@ -40,7 +43,8 @@ width: 50%;
   
 }
 .contenedorImagen {
-  width:100%;
+  width:50%;
+  height:50%;
   margin-top: 33%;
   display: block; 
   margin-left: 4.10%
@@ -72,31 +76,30 @@ width: 50%;
 
 
 
-
 .landing {
-  
-  background-color: rgba(255, 165, 0, 0.7); /* RGBA con 0.5 de opacidad */
-border-top-right-radius: 30%;
-border-top-left-radius: 30%;
-  margin-top: -50%;
-text-align: left;
-width: 20%;
-
-min-width: 70vh;
-align-items: center;
-margin: auto;
-justify-content: center;
-height: fit-content;
-box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.7), 0px 0px 30px 10px rgba(255, 255, 255, 0.5);
-
+    background-color: rgba(255, 165, 0, 0.7);
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+    text-align: center; /* Centro el contenido horizontalmente */
+    width: 40%;
+    min-width: 80vh;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    height: fit-content;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.7), 0px 0px 30px 10px rgba(255, 255, 255, 0.5);
+    ;
+    margin-top: 10%;
 }
+
+
 .contenedorImagen {
   display:inline-block;
   flex-direction: column;
   margin-left: 0;
   margin-right: 10px;
   margin-top: auto;
-  width: min-content;
+  width:max-content;
   align-items: center;
   justify-items: center;
   width: 100%;
@@ -105,7 +108,7 @@ box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.7), 0px 0px 30px 10px rgba(25
 
 .imagenperro{
  
-  width: 80%;
+  width: 100%;
   height: 80%;
 }
 .huella {
@@ -114,20 +117,25 @@ box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.7), 0px 0px 30px 10px rgba(25
   justify-content: center;
   max-width: 80%;
   max-height: 80%;
+  margin-bottom: 0;
 }
 .titulodepagina {
   font-family: 'Comic Sans MS';
-  font-size: 4em; /* Puedes ajustar el tamaño según tus preferencias */
+  margin-top: 0;
+  font-size: 2.3em; /* Puedes ajustar el tamaño según tus preferencias */
   color: black; /* Color del texto */
   font-weight: bold; /* Texto en negrita */
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 1); /* Reborde blanco */
   margin-bottom: 0.2%;
+  justify-content: center;
+  text-align: center;
 }
 .subtitulo {
   font-family: 'Comic Sans MS', cursive;
-  font-size: 1.5em; /* Puedes ajustar el tamaño según tus preferencias */
+  font-size: 1.2em; /* Puedes ajustar el tamaño según tus preferencias */
   color: rgb(255, 123, 0); /* Color del texto */
   font-weight: bold; /* Texto en negrita */
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 1); /* Reborde blanco */
   margin-bottom: 10%;
+  
 }

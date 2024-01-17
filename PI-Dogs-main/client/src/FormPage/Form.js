@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import "./Form.css";
 import { useSelector } from "react-redux";
 import { NewDog } from '../Redux/Actions';
+import { useDispatch } from 'react-redux';
+import { AddAllDogs} from "../Redux/Actions.js";
 
 
 export default function Form(props){
@@ -23,6 +25,9 @@ const [error,setErrors] = useState({})
 const [tempError,setTempErrors] = useState({})
 const [enviar,setEnviar] = useState(true)
 const [addtemperamento,setTemperamento] = useState(true)
+const dispatch = useDispatch();
+   
+
 var resultadoConcatenado = ""
 const agregarPalabra = () => {
   if (nuevaPalabra.trim() !== '') {
@@ -62,6 +67,8 @@ const handleSubmit = event => {
     console.log("Objeto de newDog:", JSON.stringify(newDog, null, 2));
     props.postNewDog(newDog);
     window.alert("Perro creado!")
+    dispatch(AddAllDogs());
+
 navigate("/home")
   }
 

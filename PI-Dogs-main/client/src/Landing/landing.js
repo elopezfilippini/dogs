@@ -23,7 +23,7 @@ dispatch(getTemps());
         <h1 class="subtitulo">buscá y crea tus razas favoritas</h1>
 
         <Link to={'/home'}> <button class="boton-hueso">Guau!!</button></Link>
-        <img className="imagenperro"src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce8b1e76965389.5c7945b0cffef.gif" title ="don´t chase me...wof!"></img></div>
+        <img className="imagenperro"src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce8b1e76965389.5c7945b0cffef.gif" title =""></img></div>
     </div>)
 }        
 
