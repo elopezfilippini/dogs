@@ -107,7 +107,7 @@ return (<div class='ContainerAll' style={{ display: 'flex', flexDirection: 'colu
           name="temperament"
           value={nuevaPalabra}
           onChange={NewWord} 
-          title={AllTemps.map(temp => temp.name).join(', ')}
+          title={AllTemps.map(temp => temp).join(', ')}
 
         />
         <button disabled={addtemperamento} style={{marginTop:"10%"}}type="button"onClick={agregarPalabra}>Agregar Temperamento</button>

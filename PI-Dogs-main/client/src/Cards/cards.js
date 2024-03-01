@@ -32,11 +32,14 @@ setFrame(0)
     if (dogShow.length < 8) setdeshabilitadoad(true)
   }
   const filtro = (event) => {
-    dispatch(filterDogs(event.target.value));
+    dispatch(filterDogs(event.target.value))
+    setFrame(0);
+    setdeshabilitado(true)
   };
   const handleOrder = (event) => {
     dispatch(OrderDog(event.target.value));
-    setFrame(0)
+    setFrame(0);
+   ;
   };
   const handleOrderW = (event) => {
     dispatch(OrderDogW(event.target.value));
@@ -87,6 +90,46 @@ setFrame(0)
             <option value="Curious">Curious</option>
             <option value="Playful">Playful</option>
             <option value="Adventurous">Adventurous</option>
+            <option value="Fun-loving">Fun-loving</option>
+            <option value="Clownish">Clownish</option>
+            <option value="Independent">Independent</option>
+            <option value="Happy">Happy</option>
+            <option value="Outgoing">Outgoing</option>
+            <option value="Alert">Alert</option>
+            <option value="Intelligent">Intelligent</option>
+            <option value="Loyal">Loyal</option>
+            <option value="Hardworking">Hardworking</option>
+            <option value="Docile">Docile</option>
+            <option value="Composed">Composed</option>
+            <option value="Faithful">Faithful</option>
+            <option value="Protective">Protective</option>
+            <option value="Responsible">Responsible</option>
+            <option value="Gentle">Gentle</option>
+            <option value="Devoted">Devoted</option>
+            <option value="Dominant">Dominant</option>
+            <option value="Obedient">Obedient</option>
+            <option value="Kind">Kind</option>
+            <option value="Tenacious">Tenacious</option>
+            <option value="Proud">Proud</option>
+            <option value="Fearless">SteFearlessady</option>
+            <option value="Self-assured">Self-assured</option>
+            <option value="Eager">Eager</option>
+            <option value="Spirited">Spirited</option>
+            <option value="Even Tempered">Even Tempered</option>
+            <option value="Joyful">Joyful</option>
+            <option value="Amiable">Amiable</option>
+            <option value="Determined">Determined</option>
+            <option value="Hardy">Hardy</option>
+            <option value="Good-tempered">Good-tempered</option>
+            <option value="Hard-working">Hard-working</option>
+            <option value="Cheerful">Cheerful</option>
+            <option value="Easygoing">Easygoing</option>
+            <option value="Steady">Steady</option>
+            <option value="Trusting">Trusting</option>
+            <option value="Territorial">Territorial</option>
+            <option value="Sociable">Sociable</option>
+            <option value="Tolerant">Tolerant</option>
+            <option value="Aggressive">Aggressive</option>
             
           </select>
           <label class="labelBusqueda" >      Origen:</label>
@@ -103,6 +146,7 @@ setFrame(0)
             </div>
         <div className="paginacion">
           <button className="button" disabled={adeshabilitado} onClick={rePag}>Back</button>
+          <label className="NroPagina" style={{color:"whitesmoke"}}>{initialFrame /8+1}</label>
         <button className="button" disabled={deshabilitado} onClick={avPag}>Next</button></div>
         
             <div/>
