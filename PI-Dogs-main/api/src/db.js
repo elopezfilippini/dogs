@@ -1,16 +1,16 @@
-require('dotenv').config({path:"process.env"});
+require('dotenv').config();
 // const dog= require('./models/Dog.js')
 // const temperament= require('./models/Temperament.js');
 const { Sequelize, DataTypes } = require('sequelize');
   const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,DB_PORT,DB_NAME
+  DB_USER, DB_PASSWORD, DB_HOST,DB_PORT,DB_NAME,DB_DEPLOY
 } = process.env;
 console.log("la data de process.env es "+ DB_USER) // remove this after you've confirmed it is working
 
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
+const sequelize = new Sequelize(DB_DEPLOY, {
   logging: false,
   native: false,
 });
@@ -23,6 +23,18 @@ async function testConnection() {
   }
 }
 
+// const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
+//   logging: false,
+//   native: false,
+// });
+// async function testConnection() {
+//   try {
+//     await sequelize.authenticate();
+//     console.log('Conexión exitosa a la base de datos.');
+//   } catch (error) {
+//     console.error('Error al conectar a la base de datos:', error);
+//   }
+// }
 testConnection();
 const basename = path.basename(__filename);
 

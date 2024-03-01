@@ -35,6 +35,7 @@ const getDogbyID = async function (req, res) {
           reference_image_id: dog.reference_image_id,
           weight:dog.weight,
           height:dog.height,
+          temperamentlist:temperamentsNames,
           temperament: temperamentsNames.join(', '),
           Origin:dog.Origin
         };
